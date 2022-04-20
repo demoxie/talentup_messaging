@@ -6,6 +6,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -15,7 +18,13 @@ public class PhoneNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @JsonProperty
+    @JsonAlias("from")
     private String from;
+    @JsonProperty
+    @JsonAlias("to")
     private String to;
+    @JsonProperty
+    @JsonAlias("text")
     private String text;
 }
