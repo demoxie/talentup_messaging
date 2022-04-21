@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -17,14 +18,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class PhoneNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
     @JsonProperty
     @JsonAlias("from")
-    private String from;
+    @Column(length = 40)
+    private String number;
     @JsonProperty
-    @JsonAlias("to")
-    private String to;
-    @JsonProperty
-    @JsonAlias("text")
-    private String text;
+    @JsonAlias("account_id")
+    private Integer account_id;
 }
