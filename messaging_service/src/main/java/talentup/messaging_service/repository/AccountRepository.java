@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import talentup.messaging_service.model.Account;
 @Repository
 public interface AccountRepository extends JpaRepository<Account,Integer> {
-    Account findAccountByAuth_idAndUsername(String auth_id, String username);
+    Account findAccountByAuthIdAndUsername(String auth_id, String username);
 }

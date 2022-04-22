@@ -14,16 +14,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(schema = "phone_number")
+@Table(name = "phone_number")
 public class PhoneNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @JsonProperty
-    @JsonAlias("from")
+
     @Column(length = 40)
     private String number;
-    @JsonProperty
-    @JsonAlias("account_id")
+
     private Integer account_id;
 }
